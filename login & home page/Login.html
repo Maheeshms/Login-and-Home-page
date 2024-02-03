@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login page </title>
+	<style type="text/css">
+		*{
+			border: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+/* body section */
+
+		body{
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/header-image.png");
+			position: center;
+			
+		}
+
+/* middle */
+
+		.middle{
+			height: 70vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+/* container section */		
+
+		.container{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 300px;
+			padding: 20px;
+			border-radius: 5px;
+		}
+		
+/* input tag */
+
+		input{
+			margin: 5px 0;
+			height: 35px;
+			padding: 7px;
+			border: 0;
+			outline: 0;
+			border-radius: 5px;
+		}
+
+/* button tag */
+
+		button{
+			height: 35px;
+			width: 100px;
+			margin: 5px 0;
+			background-color: skyblue;
+			border-radius: 5px;
+			border: none;
+			color: white;
+		}
+		button:hover{
+			background-color: blue;
+			color: skyblue;
+		}
+        .container button:active{
+            box-shadow: rgba(206, 201, 201, 0.5);
+            background-color: rgb(228, 225, 225);
+        }
+
+/* header section */
+
+		.header{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 30px;
+			cursor: pointer;
+		}
+		 .header button{
+			color: white;
+			background-color: red;
+			border: 0;
+			border-radius: 4px;
+			font-size: 15px;
+			cursor: pointer;	
+		}
+
+/* logo img */
+
+		.header span img{
+			height: 30px;
+			width:auto;
+		}
+
+/* login tag */
+
+		.login{
+			font-size: 50px;
+			color: white;
+			margin-bottom: 20px;
+			cursor: pointer;
+		}
+
+/*remember tag */
+
+		.remember{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			
+		}
+		.remember div{
+			padding: 10px;
+			color: white;
+
+		}
+		h3{
+			color:white;
+			text-align:center
+		}
+	</style>
+<!-- end of css style -->
+
+<!-- java script for email and password verificatio -->
+
+	<script type="text/javascript">
+		function fun()
+       { 
+		console.log('ddd')
+          var a=document.getElementById("Mail").value;
+          var b=document.getElementById("Password").value;
+          var c= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+          
+        if (a.match(c) && b.length>=4)
+           {
+		          //window.alert("Email and Password is correct"); 
+				 window.location='Homepage.html'
+                 
+				
+	        }
+        if(!a.match(c)){
+           			
+                   window.alert("Email is not correct");
+              }
+        if ( b.length<=3){
+              	 window.alert("Password is not correct");
+            }
+            
+        } 
+
+	</script>
+</head>
+<body>
+	<div class="header">
+		<span><img src="images/logo.png"></span>
+		<button>Sign up</button>
+	</div> 
+	<h3> Enter valid Email Ex:- 123@gmail.com and passward should be more than 4 characters </h3>
+	<div class="middle">
+		<div class="container">
+			<div class="login">Login</div>
+				<input id="Mail" type="email" placeholder="Email">
+				<input id="Password" type="password" placeholder="Password">
+			<div class="remember">
+				<input type="checkbox">
+				<div>Remeber me</div>
+			</div>
+           	<button onclick=fun()> Login </button>
+		</div>
+	</div>
+</body>
+</html>
